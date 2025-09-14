@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackEndInfrastructure", "BackEndInfrsastructure\BackEndInfrastructure.csproj", "{B29AC63A-9878-465B-A0B3-F2C9080CB56E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiExample", "WebApiExample\WebApiExample.csproj", "{6427D70A-D9C5-4B34-95D9-288429C8ECDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDGF-Auth", "WebApiExample\IDGF-Auth.csproj", "{6427D70A-D9C5-4B34-95D9-288429C8ECDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations.SQL", "Migrations.SQL\Migrations.SQL.csproj", "{64C0F748-D58E-4DDE-810C-9DBAA16DA519}"
 EndProject
