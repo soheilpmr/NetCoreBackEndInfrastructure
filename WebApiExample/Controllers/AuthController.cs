@@ -6,10 +6,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using WebApiExample.Data.Entities;
-using WebApiExample.Services.JWT;
+using IDGFAuth.Data.Entities;
+using IDGFAuth.Services.JWT;
 
-namespace WebApiExample.Controllers
+namespace IDGFAuth.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

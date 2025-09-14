@@ -5,10 +5,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using WebApiExample.Controllers;
-using WebApiExample.Data.Entities;
+using IDGFAuth.Controllers;
+using IDGFAuth.Data.Entities;
 
-namespace WebApiExample.Services.JWT
+namespace IDGFAuth.Services.JWT
 {
     public class JWTService : IJWTService
     {

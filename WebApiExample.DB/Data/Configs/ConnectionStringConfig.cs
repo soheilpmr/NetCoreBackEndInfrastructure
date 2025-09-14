@@ -1,4 +1,4 @@
-﻿namespace WebApiExample.Data.Configs
+﻿namespace IDGFAuth.Data.Configs
 {
     public class ConnectionStringConfig
     {

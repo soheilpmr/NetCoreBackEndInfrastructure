@@ -4,21 +4,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using WebApiExample.Data.Configs;
-using WebApiExample.Data.Entities;
+using IDGFAuth.Data.Configs;
+using IDGFAuth.Data.Entities;
 
-namespace WebApiExample.Data
+namespace IDGFAuth.Data
 {
-    public class WebApiDbContextSQL : IdentityDbContext<ApplicationUser, IdentityRole, string>
+    public class IDGFAuthDbContextSQL : IdentityDbContext<ApplicationUser, IdentityRole, string>
     {
         private readonly IServiceProvider _serviceProvider;
-        public WebApiDbContextSQL(DbContextOptions<WebApiDbContextSQL> options, IServiceProvider serviceProvider) : base(options)
+        public IDGFAuthDbContextSQL(DbContextOptions<IDGFAuthDbContextSQL> options, IServiceProvider serviceProvider) : base(options)
         {
             _serviceProvider = serviceProvider;
             this.ChangeTracker.LazyLoadingEnabled = false;
         }
 
-        public WebApiDbContextSQL(IServiceProvider serviceProvider) : base()
+        public IDGFAuthDbContextSQL(IServiceProvider serviceProvider) : base()
         {
             _serviceProvider = serviceProvider;
             this.ChangeTracker.LazyLoadingEnabled = false;

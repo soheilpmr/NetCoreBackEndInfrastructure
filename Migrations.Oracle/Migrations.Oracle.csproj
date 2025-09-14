@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebApiExample.DB\WebApiExample.DB.csproj" />
+    <ProjectReference Include="..\WebApiExample.DB\IDGF.AuthDB.csproj" />
   </ItemGroup>
 
 </Project>

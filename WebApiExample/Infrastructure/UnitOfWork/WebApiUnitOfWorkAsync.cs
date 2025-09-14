@@ -1,17 +1,14 @@
 ﻿using BackEndInfrastructure.Infrastructure.UnitOfWork;
-using WebApiExample.Data;
-using WebApiExample.Infrastructure.Repositories;
-using WebApiExample.Infrastructure.Repositories.Interfaces;
+using IDGFAuth.Data;
 
-namespace WebApiExample.Infrastructure.UnitOfWork
+namespace IDGFAuth.Infrastructure.UnitOfWork
 {
-    public class WebApiUnitOfWorkAsync : UnitOfWorkAsync<WebApiDbContextOracle>, IWebApiUnitOfWorkAsync
+    public class WebApiUnitOfWorkAsync : UnitOfWorkAsync<IDGFAuthDbContextSQL>, IWebApiUnitOfWorkAsync
     {
-        public WebApiUnitOfWorkAsync(IServiceProvider serviceProvider) : base(new WebApiDbContextOracle(serviceProvider))
+        public WebApiUnitOfWorkAsync(IServiceProvider serviceProvider) : base(new IDGFAuthDbContextSQL(serviceProvider))
         {
-            WebServerUser = new WebServiceUserRepository(base._dbContext);
+            //WebServerUser = new WebServiceUserRepository(base._dbContext);
         }
 
-        public IWebServerUserRepository WebServerUser { get; private set; }
     }
 }

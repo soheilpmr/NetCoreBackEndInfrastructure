@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
-using WebApiExample.Data.Entities;
+using IDGFAuth.Data.Entities;
 
-namespace WebApiExample.Services.JWT.Middleware
+namespace IDGFAuth.Services.JWT.Middleware
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AuthorizeAttribute : Attribute, IAuthorizationFilter

@@ -1,4 +1,4 @@
-﻿namespace WebApiExample.Infrastructure.Initializer
+﻿namespace IDGFAuth.Infrastructure.Initializer
 {
     public static class GlobalRoles
     {

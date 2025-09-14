@@ -1,9 +1,9 @@
-﻿using WebApiExample.Infrastructure.Repositories.Interfaces;
+﻿
 
-namespace WebApiExample.Infrastructure.UnitOfWork
+namespace IDGFAuth.Infrastructure.UnitOfWork
 {
     public interface IWebApiUnitOfWorkAsync
     {
-        IWebServerUserRepository WebServerUser { get; }
+        //IWebServerUserRepository WebServerUser { get; }
     }
 }

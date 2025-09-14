@@ -1,18 +1,18 @@
 ﻿using IdentityModel;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using WebApiExample.Data;
-using WebApiExample.Data.Entities;
+using IDGFAuth.Data;
+using IDGFAuth.Data.Entities;
 
-namespace WebApiExample.Infrastructure.Initializer
+namespace IDGFAuth.Infrastructure.Initializer
 {
     public class DbInitializer : IDbInitializer
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly WebApiDbContextOracle _dbContext;
+        private readonly IDGFAuthDbContextSQL _dbContext;
 
-        public DbInitializer(WebApiDbContextOracle dbContext,
+        public DbInitializer(IDGFAuthDbContextSQL dbContext,
             UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace WebApiExample.Data.Entities
+namespace IDGFAuth.Data.Entities
 {
     public class ApplicationUser : IdentityUser
     {

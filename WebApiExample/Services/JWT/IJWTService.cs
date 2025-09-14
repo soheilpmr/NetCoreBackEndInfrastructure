@@ -1,6 +1,6 @@
-using WebApiExample.Data.Entities;
+using IDGFAuth.Data.Entities;
 
-namespace WebApiExample.Services.JWT
+namespace IDGFAuth.Services.JWT
 {
     public interface IJWTService
     {

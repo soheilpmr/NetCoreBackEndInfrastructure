@@ -2,7 +2,7 @@ using BackEndInfrastructure.Controller;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApiExample.Controllers
+namespace IDGFAuth.Controllers
 {
     
     [ApiController]
@@ -10,7 +10,7 @@ namespace WebApiExample.Controllers
     public class TestApiController : BaseApiController
     {
         [HttpGet]
-        [WebApiExample.Services.JWT.Middleware.Authorize]
+        [IDGFAuth.Services.JWT.Middleware.Authorize]
         [Route("Get")]
         public async Task<IActionResult> Get()
         {

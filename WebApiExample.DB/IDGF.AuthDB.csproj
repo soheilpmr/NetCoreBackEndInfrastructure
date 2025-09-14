@@ -28,4 +28,8 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\BackEndInfrsastructure\BackEndInfrastructure.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Data\Domain\" />
+	</ItemGroup>
 </Project>

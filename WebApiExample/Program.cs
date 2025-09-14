@@ -10,14 +10,14 @@ using System;
 using System.Configuration;
 using System.Reflection;
 using System.Text;
-using WebApiExample.Data;
-using WebApiExample.Data.Configs;
-using WebApiExample.Data.Entities;
-using WebApiExample.Infrastructure.Initializer;
-using WebApiExample.Infrastructure.UnitOfWork;
-using WebApiExample.Services;
-using WebApiExample.Services.JWT;
-using WebApiExample.Services.JWT.Middleware;
+using IDGFAuth.Data;
+using IDGFAuth.Data.Configs;
+using IDGFAuth.Data.Entities;
+using IDGFAuth.Infrastructure.Initializer;
+using IDGFAuth.Infrastructure.UnitOfWork;
+using IDGFAuth.Services;
+using IDGFAuth.Services.JWT;
+using IDGFAuth.Services.JWT.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -108,26 +108,28 @@ builder.Services.AddSwaggerGen(
     });
 
 #region OracleRegistration
-builder.Services.AddDbContext<WebApiDbContextOracle>((serviceProvider, options) =>
-{
+//builder.Services.AddDbContext<WebApiDbContextOracle>((serviceProvider, options) =>
+//{
    
-});
+//});
 #endregion
 
 builder.Services.Configure<ConnectionStringConfig>(builder.Configuration.GetSection("ConnectionStrings"));
 
 #region SQLServerRegistration
-builder.Services.AddDbContext<WebApiDbContextSQL>((serviceProvider, options) =>
-{
-    
-});
+builder.Services.AddDbContext<IDGFAuthDbContextSQL>(options =>
+    options.UseSqlServer(
+              builder.Configuration.GetConnectionString("DefaultConnectionSQLServer"),
+        sql => sql.MigrationsAssembly("Migrations.SQL")
+    ));
+
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<WebApiDbContextSQL>();
+    .AddEntityFrameworkStores<IDGFAuthDbContextSQL>();
 #endregion
 
 builder.Services.AddScoped<IWebApiUnitOfWorkAsync, WebApiUnitOfWorkAsync>();
-builder.Services.AddScoped<WebServiceUserService, WebServiceUserService>();
+//builder.Services.AddScoped<WebServiceUserService, WebServiceUserService>();
 builder.Services.AddScoped<IJWTService, JWTService>();
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 // End Infrastructure Implemention
@@ -140,12 +142,12 @@ using (var scope = app.Services.CreateScope())
 
     if (connectionStringConfig.OracleActivaityStatus == "true")
     {
-        var dataContextoracle = scope.ServiceProvider.GetRequiredService<WebApiDbContextOracle>();
+        //var dataContextoracle = scope.ServiceProvider.GetRequiredService<IDGFAuthDbContextSQL>();
         //dataContextoracle.Database.Migrate();
     }
     if (connectionStringConfig.SQLServerActivaityStatus == "true")
     {
-        var dataContextsql = scope.ServiceProvider.GetRequiredService<WebApiDbContextSQL>();
+        var dataContextsql = scope.ServiceProvider.GetRequiredService<IDGFAuthDbContextSQL>();
         //dataContextsql.Database.Migrate();
     }
 

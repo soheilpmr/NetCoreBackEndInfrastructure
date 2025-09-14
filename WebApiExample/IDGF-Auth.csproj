@@ -35,6 +35,7 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Infrastructure\Repositories\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,9 +45,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BackEndInfrsastructure\BackEndInfrastructure.csproj" />
-    <ProjectReference Include="..\Migrations.Oracle\Migrations.Oracle.csproj" />
     <ProjectReference Include="..\Migrations.SQL\Migrations.SQL.csproj" />
-    <ProjectReference Include="..\WebApiExample.DB\WebApiExample.DB.csproj" />
+    <!--<ProjectReference Include="..\WebApiExample.DB\IDGF.AuthDB.csproj" />-->
   </ItemGroup>
 
 </Project>
