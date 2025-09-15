@@ -55,12 +55,12 @@ builder.Services.AddAuthentication(options =>
 {
     x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
     {
-        //ValidIssuer = builder.Configuration["JWTBearerSettings:Issuer"],
-        //ValidAudience = builder.Configuration["JWTBearerSettings:Audience"],
+        ValidIssuer = builder.Configuration["JWTBearerSettings:Issuer"],
+        ValidAudience = builder.Configuration["JWTBearerSettings:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTBearerSettings:Key"])),
         ValidateIssuerSigningKey = true,
-        ValidateIssuer = false,
-        ValidateAudience = false,
+        ValidateIssuer = true,
+        ValidateAudience = true,
         ValidateLifetime = true,
         ClockSkew = TimeSpan.Zero
     };

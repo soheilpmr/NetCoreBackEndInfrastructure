@@ -12,7 +12,7 @@ namespace IDGFAuth.Services.JWT
 {
     public class JWTService : IJWTService
     {
-        private const string TokenSecret = "RadinPeymentChannelUserManagementSecurely";
+        private const string TokenSecret = "Xl2h0A+PVv8a5fK8f4x2RkYsnwZ+W04U2d8buwpHGoM=";
         private readonly TimeSpan TokenLifeTime = TimeSpan.FromHours(8);
 
         private readonly UserManager<ApplicationUser> _userManager;
@@ -37,8 +37,8 @@ namespace IDGFAuth.Services.JWT
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.Add(TokenLifeTime),
-                //Issuer = "https://radin.tech/",
-                //Audience = "https://usermangement.channel.com/",
+                Issuer = "https://radin.tech/",
+                Audience = "https://usermangement.channel.com/",
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
 
             };
